@@ -20,6 +20,8 @@ async function getTrendingMovies() {
 
     const trendingPreviewMovieList = document.querySelector('.trendingPreview-movieList');
 
+    trendingPreviewMovieList.innerHTML = '';
+
     movies.forEach(movie => {
         const movieContainer = document.createElement('div');
         movieContainer.classList.add('movie-container');
@@ -60,3 +62,4 @@ async function getGenres() {
 
 getTrendingMovies();
 getGenres();
+
