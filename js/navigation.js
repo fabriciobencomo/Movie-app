@@ -1,5 +1,6 @@
 searchFormBtn.addEventListener('click', () => {
-    location.hash = '#search=';
+    const valueSearch = searchFormInput.value;
+    location.hash = '#search=' + valueSearch;
 })
 
 trendingBtn.addEventListener('click', () => {
@@ -7,6 +8,7 @@ trendingBtn.addEventListener('click', () => {
 })
 
 arrowBtn.addEventListener('click', () => {
+    history.back();
     location.hash = '';
 })
 
@@ -92,8 +94,6 @@ function moviesPage() {
 }
 
 function searchPage() {
-    console.log('Search!!');
-
     headerSection.classList.remove('header-container--long');
     headerSection.style.background = '';
     arrowBtn.classList.remove('inactive');
@@ -113,8 +113,6 @@ function searchPage() {
 }
 
 function trendsPage() {
-
-
     headerSection.classList.remove('header-container--long');
     headerSection.style.background = '';
     arrowBtn.classList.remove('inactive');
