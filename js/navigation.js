@@ -25,7 +25,9 @@ function navigator(){
     }else{
         homePage()
     }
-    location.hash
+    
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
 
 function homePage() {
@@ -62,12 +64,12 @@ function genrePage() {
     movieDetailSection.classList.add('inactive');
   
     // ['#category', 'id-name']
-    const [_, categoryData] = location.hash.split('=');
-    const [categoryId, categoryName] = categoryData.split('-');
+    const [_, genreData] = location.hash.split('=');
+    const [genreId, genreName] = genreData.split('-');
   
-    headerCategoryTitle.innerHTML = categoryName;
+    headerCategoryTitle.innerHTML = genreName;
     
-    getMoviesByCategory(categoryId);
+    getMoviesByGenre(genreId);
 }
   
 function moviesPage() {
